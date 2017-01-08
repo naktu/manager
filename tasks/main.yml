@@ -3,4 +3,4 @@
     user: name=manager groups=wheel
 
   - name: ensure keys added
-    autorized_key: user=manager key="{{ lookup('file', '.ssh/manager.pub') }}"
+    authorized_key: user=manager key="{{ lookup('file', '.ssh/manager.pub') }}"
