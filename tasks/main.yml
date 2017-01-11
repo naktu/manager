@@ -7,7 +7,7 @@
 
   - name: ensure file sudo rights is created
     template:
-      srs: sudo.j2
+      src: sudo.j2
       dest: /etc/sudoers.d/"{{ group_name }}"
       owner: root
       mode: 0644
