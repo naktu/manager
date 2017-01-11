@@ -1,6 +1,16 @@
 ---
-  - name: ensure user manager created and member of group wheel
-    user: name=manager groups=wheel
+  - name: create group
+    group: name="{{ group_name }}" state=present
+
+  - name: ensure user  created and member of group wheel
+    user: name="{{ user_name }}" groups="{{ group_name }}"
+
+  - name: ensure file sudo rights is created
+    template:
+      srs: sudo.j2
+      dest: /etc/sudoers.d/"{{ group_name }}"
+      owner: root
+      mode: 0644
 
   - name: ensure keys added
     authorized_key: user=manager key="{{ lookup('file', 'manager.pub') }}"
