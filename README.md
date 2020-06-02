@@ -4,3 +4,9 @@ Manager
 =======
 
 This role prepare host for managment of ansible.
+
+Variables
+========
+
+    group_name: # Default wheel
+    username: # Deafult manager

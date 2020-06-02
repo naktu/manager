@@ -1,2 +1,3 @@
 ---
-# defaults file for manager
+group_name: wheel
+user_name: manager
